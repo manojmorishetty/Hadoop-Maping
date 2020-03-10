@@ -1,74 +1,43 @@
-export const getAthletes = () => {
-    return fetch('http://localhost:9000/api/athletes', {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        redirect: 'follow',
-        referrer: 'no-referrer'
-    })
-        .then(response => response.json())
-        .catch(err => {
-            return err;
-        });
-
+export const getServiceOwnerDetails = (searchText) => {
+    return {
+        "topics": {
+            "log-11-5click-111-accesslog": "T0",
+            "log-11-5click-111-squid-access": "T2",
+            "log-11-5click-111-applog": "T1"
+        }
+    }
 }
 
-export const getAthlete = (id) => {
-    debugger;
-    return fetch(`http://localhost:9000/api/athletes/${id}`, {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
+export const getTopicDetails = (searchText) => {
+    return {
+        "retention_period": {
+            "12": "RP2"
         },
-        redirect: 'follow',
-        referrer: 'no-referrer'
-    })
-        .then(response => response.json())
-        .catch(err => {
-            return err;
-        });
+        "users": {
+            "hadoop-admins": "U1",
+            "5click_logs": "U2",
+            "la-app-dev-adm": "U0"
+        },
+        "serviceOwner": {
+            "5click_logs": "S2"
+        },
+        "serviceOwnerGroup": {
+            "bb_5click_logs": "SG2"
+        },
+        "topic": "log-11-5click-111-accesslog"
+    }
 }
 
-export const deleteAthlete = (id) => {
-    debugger;
-    return fetch(`http://localhost:9000/api/athletes/${id}`, {
-        method: 'DELETE',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
+export const getUserDetails = (searchText) => {
+    return {
+        "topics": {
+            "log-11-auth-applog": "T0"
         },
-        redirect: 'follow',
-        referrer: 'no-referrer'
-    })
-        .then(response => response.json())
-        .catch(err => {
-            return err;
-        });
-}
-
-export const uploadAthleteJSON = (file) => {
-    fetch('http://localhost:9000/api/uploadjsonathlete', {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        redirect: 'follow',
-        referrer: 'no-referrer',
-        body: file,
-    })
-        .then(response => response.json())
-        .then(success => {
-            // Do something with the successful response
-        })
-        .catch(error => console.log(error)
-        );
+        "serviceOwners": {
+            "auth_logs": "S0"
+        },
+        "serviceOwnerGroup": {
+            "bb_auth_logs": "SG0"
+        }
+    }
 }

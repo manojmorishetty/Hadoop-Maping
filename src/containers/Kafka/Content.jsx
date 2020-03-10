@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Button, Card, Table, Collapse } from 'reactstrap';
 import Filter from './Filter'
-import * as kafkaAPI from 'API/Kafka.js'
+import * as kafkaAPI from 'API/test.js'
 
 
 const Content = () => {
     const [contentType, setContentType] = useState('serviceOwner');
     const [searchText, setSearchText] = useState('');
     const [result, setResult] = useState({});
+
+    const handleContent = (content) => {
+        setContentType(content);
+        setSearchText('');
+        setResult({});
+    }
+
+    const handleSearch = (search) => {
+        setSearchText(search);
+        setResult({});
+    }
+
 
     const getData = async () => {
         if (contentType == "serviceOwner") {
@@ -24,6 +36,7 @@ const Content = () => {
         }
         else {
             const APIresult = await kafkaAPI.getUserDetails(searchText);
+            debugger
             if (APIresult) {
                 setResult(APIresult)
             }
@@ -32,10 +45,13 @@ const Content = () => {
 
     return (
         <div className="content">
-            <Filter contentType={setContentType} searchText={setSearchText} getData={getData} />
+            <Filter contentType={handleContent} searchText={searchText} setSearchText={handleSearch} getData={getData} />
             <div style={{ marginTop: "50px" }}>
                 <Card body>
-                    <ContentView contentType={contentType} searchText={setSearchText} result={result} />
+                    {
+                        (Object.keys(result).length == 0 || searchText == '') ? '' :
+                            <ContentView contentType={contentType} result={result} />
+                    }
                 </Card>
             </div>
         </div>

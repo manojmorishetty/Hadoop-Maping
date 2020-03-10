@@ -6,7 +6,7 @@ import {
 import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
 
 
-const Filter = ({ contentType, getData }) => {
+const Filter = ({ contentType, getData, searchText, setSearchText }) => {
     let contentTypes = [{ "name": "Service owner", "key": "serviceOwner" },
     { "name": "Topic", "key": "topic" }, { "name": "User", "key": "user" }]
     const [selectedContent, setSelectedContent] = useState('serviceOwner')
@@ -35,7 +35,7 @@ const Filter = ({ contentType, getData }) => {
                     </ButtonToolbar>
                 </Col>
                 <Col md={12} lg={12} xl={4} xs={12}>
-                    <Input />
+                    <Input value={searchText} onChange={(e) => setSearchText(e.target.value)} />
                 </Col>
                 <Col md={12} lg={12} xl={4} xs={12}>
                     <Button onClick={getData}>Submit</Button>
