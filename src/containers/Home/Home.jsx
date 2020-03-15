@@ -8,7 +8,7 @@ const Home = () => {
     let history = useHistory()
     return (
         <div className="content">
-            <h3 className="main__heading">Welcome to Hadoop</h3>
+            <h3 className="main__heading">Welcome to Hadoop Customer Mapping</h3>
             <div className="heading_margin">
                 <Row>
                     <Col xl={6}>

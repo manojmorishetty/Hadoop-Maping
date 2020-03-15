@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Button, Card, Table, Collapse } from 'reactstrap';
 import Filter from './Filter'
-import * as kafkaAPI from 'API/test.js'
+import * as kafkaAPI from 'API/Kafka.js'
 
 
 const Content = () => {

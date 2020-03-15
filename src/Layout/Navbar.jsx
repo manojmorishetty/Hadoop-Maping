@@ -8,7 +8,7 @@ const NavbarSW = () => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/home">Blackberry</NavbarBrand>
+        <NavbarBrand href="/home">BlackBerry</NavbarBrand>
       </Navbar>
     </div>
   );
