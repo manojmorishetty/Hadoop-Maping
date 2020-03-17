@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Button, Card, Table, Collapse } from 'reactstrap';
 import Filter from './Filter'
-<<<<<<< HEAD
 import FixedJSON from './FixedJSON'
 import * as kafkaAPI from 'API/test.js'
-=======
-import * as kafkaAPI from 'API/Kafka.js'
->>>>>>> 2f278960c592110b129890233e7bea8793326e5d
 
 
 const Content = () => {
