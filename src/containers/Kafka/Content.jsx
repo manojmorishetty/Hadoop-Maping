@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Button, Card, Table, Collapse } from 'reactstrap';
 import Filter from './Filter'
+import FixedJSON from './FixedJSON'
 import * as kafkaAPI from 'API/test.js'
 
 
@@ -46,6 +47,7 @@ const Content = () => {
     return (
         <div className="content">
             <Filter contentType={handleContent} searchText={searchText} setSearchText={handleSearch} getData={getData} />
+            <FixedJSON />
             <div style={{ marginTop: "50px" }}>
                 <Card body>
                     {
