@@ -10,21 +10,27 @@ export const getServiceOwnerDetails = (searchText) => {
 
 export const getTopicDetails = (searchText) => {
     return {
-        "retention_period": {
-            "12": "RP2"
+        "serviceOwnerGroup": {
+            "bb_5click_logs": "SG2"
         },
-        "users": {
-            "hadoop-admins": "U1",
-            "5click_logs": "U2",
-            "la-app-dev-adm": "U0"
+        "owner_DL": {
+            "PUSHWEB - BB Service Engineering <pushwebbbserviceengineering@blackberry.com>": "owner_DL"
+        },
+        "service": {
+            "5click": "service"
         },
         "serviceOwner": {
             "5click_logs": "S2"
         },
-        "serviceOwnerGroup": {
-            "bb_5click_logs": "SG2"
+        "retention_period": {
+            "12": "RP2"
         },
-        "topic": "log-11-5click-111-accesslog"
+        "topic": "log-11-5click-111-accesslog",
+        "users": {
+            "la-app-dev-adm": "U0",
+            "hadoop-admins": "U1",
+            "5click_logs": "U2"
+        }
     }
 }
 
